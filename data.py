@@ -275,7 +275,7 @@ class Adobe5kDataLoader(DataLoader):
 
             for file in files:
 
-                img_id = file.split("-")[0]
+                img_id = file.split(".")[0]
 
                 is_id_in_list = False
                 for img_id_test in image_ids_list:
@@ -295,7 +295,7 @@ class Adobe5kDataLoader(DataLoader):
                     else:
                         idx_tmp = img_id_to_idx_dict[img_id]
 
-                    if "input" in root:  # change this to the name of your
+                    if "low" in root:  # change this to the name of your
                                         # input data folder
 
                         input_img_filepath = file
@@ -303,7 +303,7 @@ class Adobe5kDataLoader(DataLoader):
                         self.data_dict[idx_tmp]['input_img'] = root + \
                             "/" + input_img_filepath
 
-                    elif ("output" in root):  # change this to the name of your
+                    elif ("high" in root):  # change this to the name of your
                                              # output data folder
 
                         output_img_filepath = file
